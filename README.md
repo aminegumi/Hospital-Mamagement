@@ -3,6 +3,7 @@ JavaFx - JDBC - OpenAI
 
 
 #Architecture
+
 .gitignore
 .idea/.gitignore
 .idea/encodings.xml
