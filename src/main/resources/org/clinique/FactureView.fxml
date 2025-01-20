@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.clinique.controller.FactureController">
+    <top>
+        <Label alignment="CENTER" maxWidth="Infinity" text="Gestion des Factures" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white; -fx-font-size: 28px; -fx-padding: 20;">
+            <font>
+                <Font name="Arial Narrow Bold" size="28.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: #2C3440;">
+            <VBox spacing="10" style="-fx-background-color: #2C3440; -fx-padding: 20;">
+                <GridPane vgap="10" hgap="10">
+                    <Label text="Montant :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="montantField" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Détails :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextArea fx:id="detailsField" prefHeight="100.0" maxWidth="Infinity" wrapText="true"
+                              GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Patient :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="patientComboBox" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <HBox spacing="10" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                        <Button onAction="#handleAddFacture" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"
+                                text="Ajouter" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                        <Button onAction="#handleUpdateFacture" style="-fx-background-color: #FFC107; -fx-text-fill: white;"
+                                text="Modifier" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                        <Button onAction="#handleDeleteFacture" style="-fx-background-color: #F44336; -fx-text-fill: white;"
+                                text="Supprimer" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                    </HBox>
+                </GridPane>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Rechercher:" style="-fx-text-fill: white;" />
+                    <TextField fx:id="searchField" promptText="Entrez un montant ou détail" HBox.hgrow="ALWAYS" />
+                    <Button onAction="#handleExportToCSV" style="-fx-background-color: #2196F3; -fx-text-fill: white;"
+                            text="Exporter en CSV" />
+                </HBox>
+
+                <TableView fx:id="factureTable" VBox.vgrow="ALWAYS" style="-fx-base: #2C3440;">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" />
+                        <TableColumn fx:id="montantColumn" text="Montant" />
+                        <TableColumn fx:id="detailsColumn" text="Détails" />
+                        <TableColumn fx:id="patientColumn" text="Patient" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

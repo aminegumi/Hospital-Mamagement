@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.chart.PieChart?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.clinique.controller.DashboardController">
+    <top>
+        <Label alignment="CENTER" maxWidth="Infinity" text="Tableau de Bord"
+               style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white; -fx-font-size: 28px; -fx-padding: 20;">
+            <font>
+                <Font name="Arial Narrow Bold" size="28.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: #2C3440;">
+            <VBox spacing="20" style="-fx-background-color: #2C3440; -fx-padding: 20;">
+                <!-- First Row of Statistics -->
+                <FlowPane hgap="20" vgap="20" alignment="CENTER">
+                    <VBox styleClass="stat-card" style="-fx-background-color: #4CAF50; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 200;">
+                        <Label text="Patients" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+                        <Label fx:id="patientsCountLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+                    </VBox>
+                    <VBox styleClass="stat-card" style="-fx-background-color: #FFC107; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 200;">
+                        <Label text="Médecins" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+                        <Label fx:id="medecinsCountLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+                    </VBox>
+                    <VBox styleClass="stat-card" style="-fx-background-color: #F44336; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 200;">
+                        <Label text="Infirmiers" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+                        <Label fx:id="infirmiersCountLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+                    </VBox>
+                </FlowPane>
+
+                <!-- Second Row of Statistics -->
+                <FlowPane hgap="20" vgap="20" alignment="CENTER">
+                    <VBox styleClass="stat-card" style="-fx-background-color: #4CAF50; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 200;">
+                        <Label text="Factures" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+                        <Label fx:id="facturesCountLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+                    </VBox>
+                    <VBox styleClass="stat-card" style="-fx-background-color: #FFC107; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 200;">
+                        <Label text="Rendez-Vous" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+                        <Label fx:id="rendezVousCountLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+                    </VBox>
+                    <VBox styleClass="stat-card" style="-fx-background-color: #F44336; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 200;">
+                        <Label text="Dossiers Médicaux" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+                        <Label fx:id="dossiersCountLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" />
+                    </VBox>
+                </FlowPane>
+
+                <!-- Chart Section -->
+                <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <PieChart fx:id="patientsGenreChart" prefWidth="600" prefHeight="400"
+                              style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                        <VBox.margin>
+                            <Insets top="20" />
+                        </VBox.margin>
+                    </PieChart>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.clinique.controller.AiAssistantController" spacing="10" style="-fx-background-color: #2C3440; -fx-padding: 20;">
+    <Label text="AI Assistant Chat" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 10; -fx-background-color: rgba(54, 63, 76, 0.659);" maxWidth="Infinity" alignment="CENTER"/>
+    <TextArea fx:id="chatArea" editable="false" wrapText="true" prefHeight="200" style="-fx-control-inner-background: #404B58; -fx-text-fill: white; -fx-font-size: 14px; -fx-border-color: #333; -fx-border-width: 2;"/>
+    <HBox spacing="10" style="-fx-padding: 10;">
+        <TextField fx:id="inputField" HBox.hgrow="ALWAYS" style="-fx-control-inner-background: white; -fx-text-fill: #2C3440; -fx-font-size: 14px;"/>
+        <Button text="Send" onAction="#handleSend" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;"/>
+    </HBox>
+</VBox>

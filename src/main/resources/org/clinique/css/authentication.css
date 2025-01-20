@@ -1,0 +1,56 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #F4F4F4, #E8E8E8);
+}
+
+.text-field, .password-field, .combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #333333;
+    -fx-border-color: #363F4C33;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5;
+}
+
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: #363F4C;
+    -fx-border-width: 1.5;
+}
+
+.button {
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+    -fx-text-fill: WHITE;
+}
+
+.login-button {
+    -fx-background-color: #363F4C;
+}
+
+.reset-button {
+    -fx-background-color: #363F4C99;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+.button:pressed {
+    -fx-opacity: 0.8;
+}
+
+.label {
+    -fx-text-fill: #363F4C;
+    -fx-font-weight: bold;
+}
+
+.title-text {
+    -fx-fill: #363F4C;
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 24;
+}
+
+.footer-text {
+    -fx-fill: WHITE;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.clinique.controller.ChambreController">
+    <top>
+        <Label alignment="CENTER" maxWidth="Infinity" text="Gestion des Chambres" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white; -fx-font-size: 28px; -fx-padding: 20;">
+            <font>
+                <Font name="Arial Narrow Bold" size="28.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: #2C3440;">
+            <VBox spacing="10" style="-fx-background-color: #2C3440; -fx-padding: 20;">
+                <GridPane vgap="10" hgap="10">
+                    <Label text="Numéro :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="numeroField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Capacité :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="capaciteField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="État :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="etatComboBox" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Date d'Occupation :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <DatePicker fx:id="dateOccupationPicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Date de Libération :" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <DatePicker fx:id="dateLiberationPicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                    <HBox spacing="10" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                        <Button onAction="#handleAddChambre" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Ajouter" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                        <Button onAction="#handleUpdateChambre" style="-fx-background-color: #FFC107; -fx-text-fill: white;" text="Modifier" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                        <Button onAction="#handleDeleteChambre" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Supprimer" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                    </HBox>
+                </GridPane>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Rechercher:" style="-fx-text-fill: white;" />
+                    <TextField fx:id="searchField" promptText="Entrez un numéro ou état" HBox.hgrow="ALWAYS" />
+                    <Button onAction="#handleExportToCSV" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Exporter en CSV" />
+                </HBox>
+
+                <TableView fx:id="chambreTable" VBox.vgrow="ALWAYS" style="-fx-base: #2C3440;">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" />
+                        <TableColumn fx:id="numeroColumn" text="Numéro" />
+                        <TableColumn fx:id="capaciteColumn" text="Capacité" />
+                        <TableColumn fx:id="etatColumn" text="État" />
+                        <TableColumn fx:id="dateOccupationColumn" text="Date d'Occupation" />
+                        <TableColumn fx:id="dateLiberationColumn" text="Date de Libération" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Priority?>
+
+<BorderPane fx:controller="org.clinique.controller.AdminPanelController" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <ToolBar style="-fx-background-color: rgba(54, 63, 76, 0.659);">
+            <HBox alignment="CENTER_LEFT" spacing="10" HBox.hgrow="SOMETIMES">
+                <ImageView fitHeight="70.0" fitWidth="90.0" preserveRatio="true">
+                    <Image url="@/Logo.png" />
+                </ImageView>
+                <Label alignment="CENTER" style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Sbitarat Management" textFill="WHITE" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="10" HBox.hgrow="SOMETIMES">
+                <Label fx:id="welcomeLabel"
+                       text="Merhba Bik!"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #1a5571; -fx-padding: 10px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+                <Button onAction="#handleLogout" style="-fx-background-color: #ff4444; -fx-text-fill: white; -fx-font-weight: bold;" text="Logout" />
+            </HBox>
+        </ToolBar>
+    </top>
+
+    <left>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: #2C3440; -fx-background: #2C3440;">
+            <VBox spacing="10" style="-fx-background-color: #2C3440; -fx-padding: 10;">
+                <Button fx:id="dashboardButton" onAction="#loadDashboard" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white; -fx-font-size: 14px;" text="Dashboard" />
+                <Button fx:id="patientsButton" onAction="#loadPatient" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="Patients" />
+                <Button fx:id="medecinsButton" onAction="#loadMedecins" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="Médecins" />
+                <Button fx:id="rendezVousButton" onAction="#loadRendezVous" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="RendezVous" />
+                <Button fx:id="chambresButton" onAction="#loadChambres" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="Chambres" />
+                <Button fx:id="dossierMedicalButton" onAction="#loadDossierMedical" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="Dossiers Médicaux" />
+                <Button fx:id="facturesButton" onAction="#loadFactures" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="Factures" />
+                <Button fx:id="infirmiersButton" onAction="#loadInfirmiers" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="Infirmier" />
+                <Button fx:id="settingsButton" onAction="#loadSettings" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;" text="Settings" />
+                <Button fx:id="aiAssistantButton" onAction="#loadAiAssistant" maxWidth="Infinity" style="-fx-background-color: rgba(54, 63, 76, 0.659); -fx-text-fill: white;"  text="AI Assistant" />
+            </VBox>
+        </ScrollPane>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox fx:id="mainContent" spacing="10" style="-fx-padding: 20;" VBox.vgrow="ALWAYS" />
+        </ScrollPane>
+    </center>
+</BorderPane>
