@@ -1,6 +1,8 @@
 # Hospital-Mamagement
 JavaFx - JDBC - OpenAI
 
+## Add OpenAI key in AiAssistantController.java
+
 
 #Architecture
 
