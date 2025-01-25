@@ -16,7 +16,7 @@ public class AiAssistantController {
     private TextField inputField;
 
     private final OkHttpClient httpClient = new OkHttpClient();
-    private final String api_key = "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";
+    private final String api_key = "Add OpenAI Key here";
 
     @FXML
     private void handleSend() {
